@@ -9,8 +9,8 @@ const Container = styled.div`
   background-color: #f0f0f0;
 `;
 
-interface ButtonProps {
-  onClick: () => void; // This defines the onClick event handler type
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick: () => void; // This specifically defines the onClick event handler type
 }
 
 // Use the ButtonProps interface for typing props in styled component
@@ -28,7 +28,6 @@ const Button = styled.button<ButtonProps>`
     background-color: #0056b3;
   }
 `;
-
 
 const CountDisplay = styled.div`
   margin-top: 20px;
