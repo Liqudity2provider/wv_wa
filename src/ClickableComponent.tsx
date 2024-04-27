@@ -27,7 +27,7 @@ const ClickableComponent = () => {
 
   return (
     <RotatingImage
-      src="src/oil-arm.png" // Replace with the actual image source
+      src="https://test-images-123hrechenko.s3.eu-central-1.amazonaws.com/oil-arm.png" // Replace with the actual image source
       alt="Rotating element"
       rotation={rotation}
       onClick={handleImageClick}
