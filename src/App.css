@@ -18,6 +18,10 @@
 body {
   height: 100vh;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;  
   background: linear-gradient(270deg, #4b6cb7, #182848, #06bbcc);
   background-size: 200% 200%;
   animation: gradientBackground 15s ease infinite;

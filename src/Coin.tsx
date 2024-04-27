@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+
+const rotateAcrossScreen = keyframes`
+  from {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100vw) rotate(360deg); // Move right across the screen and rotate
+    opacity: 1;
+  }
+`;
+
 
 const StyledCoin = styled.div<{ opacity: number; transform: string; } & React.HTMLAttributes<HTMLDivElement>>`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-image: url('https://cdn.midjourney.com/6226a15d-3658-4631-9b6e-611d43848315/0_0.webp');  // Ensure the URL is correct
   background-size: cover;
   border-radius: 50%;
