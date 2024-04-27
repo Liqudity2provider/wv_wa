@@ -26,10 +26,25 @@ const StyledCoin = styled.div<{ opacity: number; transform: string; } & React.HT
   transform: ${props => props.transform};
 `;
 
+
+const CountDisplay = styled.div`
+  position: fixed;
+  top: 80%;  // Position it near the top of the page
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #FFF; // White color for visibility
+  background: rgba(0, 0, 0, 0.5); // Semi-transparent background
+  padding: 10px 20px;
+  border-radius: 10px;
+`;
+
+
 const Coin: React.FC = () => {
     const [clicked, setClicked] = useState(false);
     const [opacity, setOpacity] = useState(1);
     const [transformStyle, setTransformStyle] = useState('rotateX(0deg)');
+    const [count, setCount] = useState(0);  // State to track the number of clicks
 
     const handleClick = () => {
       if (!clicked) {
@@ -42,16 +57,16 @@ const Coin: React.FC = () => {
           setTransformStyle('rotateX(0deg)');  // Reset the transform
           setClicked(false);
         }, 140);  // Short duration to match quick tap effect
+        setCount(count + 1);  // Increment the count on each click
       }
     };
 
-    return (
-      <StyledCoin 
-        opacity={opacity} 
-        transform={transformStyle} 
-        onClick={handleClick}
-      />
-    );
+  return (
+    <>
+      <StyledCoin opacity={opacity} transform={transformStyle} onClick={handleClick} />
+      <CountDisplay>Clicks: {count}</CountDisplay>
+    </>
+  );
 };
 
 export default Coin;
