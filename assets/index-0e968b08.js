@@ -62,4 +62,4 @@ Error generating stack: `+l.message+`
   position: absolute;
   top: 35%;
   left: 43%;
-`,Hh=()=>{const[e,t]=Ct.useState(0);return Cr(Vh,{src:"src/oil-arm.png",alt:"Rotating element",rotation:e,onClick:()=>{t(r=>r+180)}})},Wh=()=>Cr("div",{className:"main-container",onClick:()=>{},children:Cr(Hh,{})});const Qh=document.getElementById("root"),Yh=Bf(Qh);Yh.render(Cr(Qr.StrictMode,{children:Cr(Wh,{})}));
+`,Hh=()=>{const[e,t]=Ct.useState(0);return Cr(Vh,{src:"https://test-images-123hrechenko.s3.eu-central-1.amazonaws.com/oil-arm.png",alt:"Rotating element",rotation:e,onClick:()=>{t(r=>r+180)}})},Wh=()=>Cr("div",{className:"main-container",onClick:()=>{},children:Cr(Hh,{})});const Qh=document.getElementById("root"),Yh=Bf(Qh);Yh.render(Cr(Qr.StrictMode,{children:Cr(Wh,{})}));
