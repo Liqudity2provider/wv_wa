@@ -9,35 +9,44 @@ const Container = styled.div`
   background-color: #f0f0f0;
 `;
 
-const Button = styled.button`
-  padding: 20px 40px;
-  font-size: 24px;
+interface ButtonProps {
+  onClick: () => void; // This defines the onClick event handler type
+}
+
+// Use the ButtonProps interface for typing props in styled component
+const Button = styled.button<ButtonProps>`
+  padding: 10px 20px;
+  font-size: 18px;
   color: #fff;
-  background-color: #0077ff;
+  background-color: #007bff;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 
   &:hover {
     background-color: #0056b3;
   }
-
-  &:active {
-    background-color: #004488;
-  }
 `;
 
-const Clicker = () => {
+
+const CountDisplay = styled.div`
+  margin-top: 20px;
+  font-size: 24px;
+`;
+
+
+const Clicker: React.FC = () => {
   const [count, setCount] = useState(0);
 
   return (
     <Container>
       <Button onClick={() => setCount(count + 1)}>
-        Click me! Count: {count}
+        Click me!
       </Button>
+      <CountDisplay>Count: {count}</CountDisplay>
     </Container>
   );
-};
+}
 
 export default Clicker;
