@@ -1,13 +1,13 @@
 import React from 'react';
-import Coin from './Coin'; // Make sure the path matches where your Coin component is located
+import './App.css';
+import ClickableComponent from './ClickableComponent';
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div>
-      <h1>Click the Coin!</h1>
-      <Coin />
+    <div className="main-container" onClick={() => {}}>
+      <ClickableComponent />
     </div>
   );
-}
+};
 
 export default App;

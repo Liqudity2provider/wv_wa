@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'; // New import for React 18
-import Clicker from './App';
+import App from './App';
 import './index.css';
 import './App.css'
 
@@ -9,6 +9,6 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Clicker />
+    <App />
   </React.StrictMode>
 );
