@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client'; // New import for React 18
 import Clicker from './App';
 import './index.css';
+import './App.css'
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
