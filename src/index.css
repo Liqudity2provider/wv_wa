@@ -3,5 +3,5 @@ body, html {
     padding: 0;
     height: 5%;
     background: url('https://test-images-123hrechenko.s3.eu-central-1.amazonaws.com/oil_background.png') no-repeat center center fixed;
-    background-size: 30%;
+    background-size: 100%;
   }

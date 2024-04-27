@@ -20,9 +20,16 @@ const RotatingImage = styled.img.attrs<{ rotation: number }>(props => ({
 
 const ClickableComponent = () => {
   const [rotation, setRotation] = useState(0);
+  const [lastRotation, setLastRotation] = useState("UP");
 
   const handleImageClick = () => {
-    setRotation(prevRotation => prevRotation + 180); // Or the degree of rotation you prefer
+    if (lastRotation === "UP") {
+        setRotation(prevRotation => prevRotation + 60);
+        setLastRotation("DOWN");
+    } else {
+        setRotation(prevRotation => prevRotation - 60);
+        setLastRotation("UP");
+    }
   };
 
   return (
