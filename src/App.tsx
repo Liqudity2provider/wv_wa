@@ -1,55 +1,43 @@
-import "./App.css";
-import { TonConnectButton } from "@tonconnect/ui-react";
-import { Counter } from "./components/Counter";
-import { Jetton } from "./components/Jetton";
-import { TransferTon } from "./components/TransferTon";
-import styled from "styled-components";
-import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
-import { useTonConnect } from "./hooks/useTonConnect";
-import { CHAIN } from "@tonconnect/protocol";
-import "@twa-dev/sdk";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const StyledApp = styled.div`
-  background-color: #e8e8e8;
-  color: black;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+`;
 
-  @media (prefers-color-scheme: dark) {
-    background-color: #222;
-    color: white;
+const Button = styled.button`
+  padding: 20px 40px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #0077ff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
   }
-  min-height: 100vh;
-  padding: 20px 20px;
+
+  &:active {
+    background-color: #004488;
+  }
 `;
 
-const AppContainer = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-`;
-
-function App() {
-  const { network } = useTonConnect();
+const Clicker = () => {
+  const [count, setCount] = useState(0);
 
   return (
-    <StyledApp>
-      <AppContainer>
-        <FlexBoxCol>
-          <FlexBoxRow>
-            <TonConnectButton />
-            <Button>
-              {network
-                ? network === CHAIN.MAINNET
-                  ? "mainnet"
-                  : "testnet"
-                : "N/A"}
-            </Button>
-          </FlexBoxRow>
-          <Counter />
-          <TransferTon />
-          <Jetton />
-        </FlexBoxCol>
-      </AppContainer>
-    </StyledApp>
+    <Container>
+      <Button onClick={() => setCount(count + 1)}>
+        Click me! Count: {count}
+      </Button>
+    </Container>
   );
-}
+};
 
-export default App;
+export default Clicker;
